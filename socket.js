@@ -3,7 +3,7 @@ import http from "http";
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-const path = require("path");
+
 import authRouter from "./routers/authRouters.js";
 import globalErrorHandler from "./middlewares/globalErrorHandler.js";
 
