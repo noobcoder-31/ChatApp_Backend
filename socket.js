@@ -3,10 +3,9 @@ import http from "http";
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-
 import authRouter from "./routers/authRouters.js";
 import globalErrorHandler from "./middlewares/globalErrorHandler.js";
-
+import compression from "compression";
 import messageRouter from "./routers/messageRouter.js";
 import userRouter from "./routers/userRouters.js";
 const app = express();
