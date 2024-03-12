@@ -3,7 +3,7 @@ import http from "http";
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-
+const path = require("path");
 import authRouter from "./routers/authRouters.js";
 import globalErrorHandler from "./middlewares/globalErrorHandler.js";
 
@@ -18,13 +18,23 @@ const io = new Server(server, {
     methods: ["GET", "POST"],
   },
 });
+
 app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
+//app.use(express.static("public"));
+app.use(compression());
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join("public", "index.html"));
+// });
 
 app.use("/api/auth", authRouter);
 app.use("/api/message", messageRouter);
 app.use("/api/users", userRouter);
+app.use("/*", (req, res, next) => {
+  const err = new Error(`Route: ${req.originalUrl} not found`);
+  next(err);
+});
 
 app.use(globalErrorHandler);
 
