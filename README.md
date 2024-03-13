@@ -20,7 +20,7 @@ MongoDB (optional): A NoSQL database used for storing user information, chat mes
 
 Installation:
 
-Clone the repository: git clone https://github.com/your-username/your-repo.git
+Clone the repository: git clone [https://github.com/your-username/your-repo.git](https://github.com/noobcoder-31/ChatApp_Backend/tree/main)
 Install dependencies: npm install
 Set up environment variables by creating a .env file and providing required configurations.
 Start the server: npm start
